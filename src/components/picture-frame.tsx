@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react";
 import { useState } from "react";
 
 type PictureFrameProps = {
-    imageName: string;
+    imageName: string | undefined;
     variant: PictureFrameSize;
 };
 
@@ -38,15 +38,17 @@ export const PictureFrame: React.FC<PictureFrameProps> = ({ imageName, variant }
                             <Loader2 className="size-20 animate-spin" />
                         </div>
                     )}
-                    <img
-                        src={`${basePath}/assets/${imageName}`}
-                        alt={"Picture"}
-                        loading="lazy"
-                        className={`rounded-xl object-cover object-top w-full h-full ${
-                            isLoading ? "opacity-0" : "opacity-100"
-                        } transition-opacity duration-300`}
-                        onLoad={() => setIsLoading(false)}
-                    />
+                    {imageName && (
+                        <img
+                            src={`${basePath}/assets/${imageName}`}
+                            alt={"Picture"}
+                            loading="lazy"
+                            className={`rounded-xl object-cover object-top w-full h-full ${
+                                isLoading ? "opacity-0" : "opacity-100"
+                            } transition-opacity duration-300`}
+                            onLoad={() => setIsLoading(false)}
+                        />
+                    )}
                 </div>
             </div>
         </div>
