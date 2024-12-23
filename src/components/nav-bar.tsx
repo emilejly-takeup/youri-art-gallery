@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import navigationContent from "../../public/content/navigation.json";
 import NavDrawer from "./nav-drawer";
 import ThemeToggle from "./theme-toggle";
 
@@ -26,12 +27,12 @@ export default function NavBar() {
                     <ul className="w-full hidden md:grid grid-cols-5 items-center text-xs md:text-base xl:text-lg">
                         <li className="text-center">
                             <Link href="/animals" className={`hover:opacity-80 ${pathname?.includes("/animals") ? "text-red-500" : ""}`}>
-                                Animaux
+                                {navigationContent.menu.animals}
                             </Link>
                         </li>
                         <li className="text-center">
                             <Link href="/nature" className={`hover:opacity-80 ${pathname?.includes("/nature") ? "text-red-500" : ""}`}>
-                                Nature
+                                {navigationContent.menu.nature}
                             </Link>
                         </li>
                         <li className="text-center text-base md:text-xl xl:text-2xl font-bold">
@@ -41,12 +42,12 @@ export default function NavBar() {
                         </li>
                         <li className="text-center">
                             <Link href="/matos" className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}>
-                                Matos
+                                {navigationContent.menu.equipment}
                             </Link>
                         </li>
                         <li className="text-center">
                             <Link href="/misc" className={`hover:opacity-80 ${pathname?.includes("/misc") ? "text-red-500" : ""}`}>
-                                Autres
+                                {navigationContent.menu.others}
                             </Link>
                         </li>
                     </ul>

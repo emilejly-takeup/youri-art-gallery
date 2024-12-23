@@ -1,0 +1,9 @@
+{
+    "menu": {
+        "home": "Accueil",
+        "animals": "Animaux",
+        "nature": "Nature",
+        "equipment": "Matos",
+        "others": "Autres"
+    }
+}

@@ -1,16 +1,17 @@
 import Link from "next/link";
+import footerContent from "../../public/content/footer.json";
 
 export default function Footer() {
     return (
-        <footer className="w-full py-4 md:py-8 gap-1 flex flex-col items-center text-xs md:text-sm">
-            <Link href="/" className="text-sm md:text-base font-bold hover:opacity-80">
-                YOURI
+        <footer className="w-full pt-12 gap-1 flex flex-col items-center text-xs lg:text-sm">
+            <Link href="/" className="text-sm lg:text-base font-bold hover:opacity-80">
+                {footerContent.brand}
             </Link>
-            <Link href="tel:+33612345678" className="hover:opacity-80">
-                +1 717 615 4386
+            <Link href={`tel:${footerContent.phone}`} className="hover:opacity-80">
+                {footerContent.phone}
             </Link>
-            <Link href="mailto:yboggiopola@gmail.com" className="hover:opacity-80">
-                yboggiopola@gmail.com
+            <Link href={`mailto:${footerContent.email}`} className="hover:opacity-80">
+                {footerContent.email}
             </Link>
         </footer>
     );

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import navigationContent from "../../public/content/navigation.json";
 
 type DrawerProps = {
     isOpen: boolean;
@@ -49,7 +50,7 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                         <div className="flex flex-col gap-4 mx-auto">
                             <li className="pb-4">
                                 <Link href="/" className={`hover:opacity-80 ${pathname === "/" ? "text-red-500" : ""}`} onClick={onClose}>
-                                    Accueil
+                                    {navigationContent.menu.home}
                                 </Link>
                             </li>
                             <li>
@@ -58,7 +59,7 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                                     className={`hover:opacity-80 ${pathname?.includes("/animals") ? "text-red-500" : ""}`}
                                     onClick={onClose}
                                 >
-                                    Animaux
+                                    {navigationContent.menu.animals}
                                 </Link>
                             </li>
                             <li>
@@ -67,7 +68,7 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                                     className={`hover:opacity-80 ${pathname?.includes("/nature") ? "text-red-500" : ""}`}
                                     onClick={onClose}
                                 >
-                                    Nature
+                                    {navigationContent.menu.nature}
                                 </Link>
                             </li>
                             <li>
@@ -76,7 +77,7 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                                     className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}
                                     onClick={onClose}
                                 >
-                                    Matos
+                                    {navigationContent.menu.equipment}
                                 </Link>
                             </li>
                             <li>
@@ -85,7 +86,7 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                                     className={`hover:opacity-80 ${pathname?.includes("/misc") ? "text-red-500" : ""}`}
                                     onClick={onClose}
                                 >
-                                    Autres
+                                    {navigationContent.menu.others}
                                 </Link>
                             </li>
                         </div>

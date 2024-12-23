@@ -40,7 +40,7 @@ export default function RootLayout({
         <html lang="fr">
             <body className={`${mainFont.variable} ${italicFont.variable} antialiased min-h-screen flex flex-col`}>
                 <NavBar />
-                <main className="flex-1">{children}</main>
+                <main className="flex items-center justify-center lg:max-h-[calc(100vh-theme(spacing.52))] overflow-y-auto">{children}</main>
                 <Footer />
             </body>
         </html>
