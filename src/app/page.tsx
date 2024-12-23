@@ -1,13 +1,19 @@
-import PictureFrame, { PictureFrameSize } from "@/components/picture-frame";
+"use client";
+
+import { PictureFrame, PictureFrameSize } from "@/components/picture-frame";
+import { useEffect, useState } from "react";
 import manifest from "../../public/assets/manifest.json";
 import homeContent from "../../public/content/home.json";
 
-// Array of available image names
 const AVAILABLE_IMAGES = manifest.images;
 
 export default function Home() {
-    // Get a random image from the array
-    const randomImage = AVAILABLE_IMAGES[Math.floor(Math.random() * AVAILABLE_IMAGES.length)];
+    const [randomImage, setRandomImage] = useState("");
+
+    useEffect(() => {
+        const newRandomImage = AVAILABLE_IMAGES[Math.floor(Math.random() * AVAILABLE_IMAGES.length)];
+        setRandomImage(newRandomImage);
+    }, []);
 
     return (
         <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 lg:gap-24 my-12">
