@@ -2,28 +2,26 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
+const mainFont = localFont({
     src: [
         {
             path: "../fonts/childs-hand.ttf",
             weight: "400",
             style: "normal",
         },
-        // Add other weights as needed
     ],
-    variable: "--font-geist-sans",
+    variable: "--font-main",
 });
 
-const geistMono = localFont({
+const italicFont = localFont({
     src: [
         {
             path: "../fonts/childs-hand-i.ttf",
             weight: "400",
             style: "normal",
         },
-        // Add other weights as needed
     ],
-    variable: "--font-geist-mono",
+    variable: "--font-italic",
 });
 
 export const metadata: Metadata = {
@@ -38,7 +36,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+            <body className={`${mainFont.variable} ${italicFont.variable} antialiased`}>{children}</body>
         </html>
     );
 }
