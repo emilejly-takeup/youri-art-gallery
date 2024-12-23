@@ -2,20 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root[data-theme="light"] {
     --background: #ffffff;
     --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+:root[data-theme="dark"] {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+}
+
+/* Default theme */
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 body {
     color: var(--foreground);
     background: var(--background);
     font-family: var(--font-main), var(--font-italic), system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
 }
