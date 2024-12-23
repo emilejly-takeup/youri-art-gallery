@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
 
 type PictureFrameProps = {
@@ -32,6 +33,11 @@ export const PictureFrame: React.FC<PictureFrameProps> = ({ imageName, variant }
         <div className={`picture-frame ${sizeClasses[variant]} rounded-xl relative`}>
             <div className={`${aspectRatioClass}`}>
                 <div className={`absolute inset-0 ${isLoading ? "animate-pulse" : ""}`}>
+                    {isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <Loader2 className="size-20 animate-spin" />
+                        </div>
+                    )}
                     <img
                         src={`${basePath}/assets/${imageName}`}
                         alt={"Picture"}
