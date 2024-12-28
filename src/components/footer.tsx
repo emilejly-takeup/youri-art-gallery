@@ -3,7 +3,7 @@ import footerContent from "../../public/content/footer.json";
 
 export default function Footer() {
     return (
-        <footer className="w-full pt-12 gap-1 flex flex-col items-center text-xs lg:text-sm">
+        <footer className="w-full pt-12 gap-1 flex flex-col items-center text-xs lg:text-sm mb-2">
             <Link href="/" className="text-sm lg:text-base font-bold hover:opacity-80">
                 {footerContent.brand}
             </Link>
