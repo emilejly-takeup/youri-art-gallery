@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type PictureFrameProps = {
     imageName: string | undefined;
@@ -17,38 +16,60 @@ export enum PictureFrameSize {
 }
 
 export const PictureFrame: React.FC<PictureFrameProps> = ({ imageName, variant }) => {
+    const [hasError, setHasError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [isImageCached, setIsImageCached] = useState(false);
     const basePath = process.env.NODE_ENV === "production" ? "/youri-art-gallery" : "";
 
     const sizeClasses = {
         [PictureFrameSize.MAIN]: "w-3/4 lg:w-3/5",
-        [PictureFrameSize.SMALL]: "w-32",
-        [PictureFrameSize.MEDIUM]: "w-64",
-        [PictureFrameSize.LARGE]: "w-96",
+        [PictureFrameSize.SMALL]: "w-[128px]",
+        [PictureFrameSize.MEDIUM]: "w-[264px]",
+        [PictureFrameSize.LARGE]: "w-[400px]",
     };
 
     const aspectRatioClass = variant === PictureFrameSize.MAIN ? "pb-[75%]" : "pb-[100%]";
 
+    useEffect(() => {
+        if (imageName) {
+            const img = new Image();
+            img.src = `${basePath}${imageName}`;
+
+            if (img.complete) {
+                setIsLoading(false);
+                setIsImageCached(true);
+            }
+        }
+    }, [imageName, basePath]);
+
+    const handleImageLoad = () => {
+        setHasError(false);
+        setIsLoading(false);
+    };
+
+    const handleImageError = () => {
+        console.error("Image failed to load:", imageName);
+        setHasError(true);
+        setIsLoading(false);
+    };
+
     return (
         <div className={`picture-frame ${sizeClasses[variant]} rounded-xl relative`}>
             <div className={`${aspectRatioClass}`}>
-                <div className={`absolute inset-0 ${isLoading ? "animate-pulse" : ""}`}>
-                    {isLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <Loader2 className="size-20 animate-spin" />
-                        </div>
-                    )}
+                <div className="absolute inset-0">
+                    {isLoading && !isImageCached && <div className="absolute inset-0 bg-gray-100 rounded-xl animate-pulse duration-500" />}
                     {imageName && (
                         <img
                             src={`${basePath}${imageName}`}
-                            alt={"Picture"}
-                            loading="lazy"
-                            className={`rounded-xl object-cover object-top w-full h-full ${
-                                isLoading ? "opacity-0" : "opacity-100"
-                            } transition-opacity duration-300`}
-                            onLoad={() => setIsLoading(false)}
+                            alt="Picture"
+                            className={`rounded-xl object-cover object-top w-full h-full transition-opacity duration-300 ${
+                                isLoading && !isImageCached ? "opacity-0" : "opacity-100"
+                            }`}
+                            onLoad={handleImageLoad}
+                            onError={handleImageError}
                         />
                     )}
+                    {hasError && <div className="absolute inset-0 flex items-center justify-center text-red-500">Failed to load image</div>}
                 </div>
             </div>
         </div>

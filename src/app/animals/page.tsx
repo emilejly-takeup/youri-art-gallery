@@ -1,3 +1,7 @@
+"use client";
+
+import { Grid, GridCategory } from "@/components/grid";
+
 export default function Animals() {
-    return <div>Animals</div>;
+    return <Grid category={GridCategory.ANIMALS} />;
 }
