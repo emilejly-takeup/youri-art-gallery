@@ -36,9 +36,14 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const basePath = process.env.NODE_ENV === "production" ? "/youri-art-gallery" : "";
+
     return (
         <html lang="fr">
-            <body className={`${mainFont.variable} ${italicFont.variable} antialiased min-h-screen flex flex-col`}>
+            <body
+                className={`${mainFont.variable} ${italicFont.variable} antialiased min-h-screen flex flex-col`}
+                style={{ "--bg-image-url": `url("${basePath}/assets/bg.jpg")` } as React.CSSProperties}
+            >
                 <div className="min-h-screen flex flex-col backdrop-blur-xl bg-white/30">
                     <NavBar />
                     <main className="flex items-center justify-center lg:max-h-[calc(100vh-theme(spacing.52))] overflow-y-auto">{children}</main>
