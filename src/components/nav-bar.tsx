@@ -41,13 +41,13 @@ export default function NavBar() {
                             </Link>
                         </li>
                         <li className="text-center">
-                            <Link href="/matos" className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}>
-                                {navigationContent.menu.equipment}
+                            <Link href="/misc" className={`hover:opacity-80 ${pathname?.includes("/misc") ? "text-red-500" : ""}`}>
+                                {navigationContent.menu.others}
                             </Link>
                         </li>
                         <li className="text-center">
-                            <Link href="/misc" className={`hover:opacity-80 ${pathname?.includes("/misc") ? "text-red-500" : ""}`}>
-                                {navigationContent.menu.others}
+                            <Link href="/matos" className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}>
+                                {navigationContent.menu.equipment}
                             </Link>
                         </li>
                     </ul>

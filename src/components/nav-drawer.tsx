@@ -73,20 +73,20 @@ export default function NavDrawer({ isOpen, onClose }: DrawerProps) {
                             </li>
                             <li>
                                 <Link
-                                    href="/matos"
-                                    className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}
-                                    onClick={onClose}
-                                >
-                                    {navigationContent.menu.equipment}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
                                     href="/misc"
                                     className={`hover:opacity-80 ${pathname?.includes("/misc") ? "text-red-500" : ""}`}
                                     onClick={onClose}
                                 >
                                     {navigationContent.menu.others}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/matos"
+                                    className={`hover:opacity-80 ${pathname?.includes("/matos") ? "text-red-500" : ""}`}
+                                    onClick={onClose}
+                                >
+                                    {navigationContent.menu.equipment}
                                 </Link>
                             </li>
                         </div>
