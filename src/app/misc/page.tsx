@@ -1,3 +1,7 @@
+"use client";
+
+import { Grid, GridCategory } from "@/components/grid";
+
 export default function Misc() {
-    return <div>Misc</div>;
+    return <Grid category={GridCategory.MISC} />;
 }

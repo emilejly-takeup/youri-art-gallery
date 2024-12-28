@@ -4,7 +4,6 @@
       "/assets/nature/wild1.jpg",
       "/assets/nature/wild10.jpg",
       "/assets/nature/wild11.jpg",
-      "/assets/nature/wild12.jpg",
       "/assets/nature/wild13.jpg",
       "/assets/nature/wild14.jpg",
       "/assets/nature/wild15.jpg",
@@ -41,7 +40,21 @@
       "/assets/animals/owl1.jpg",
       "/assets/animals/thing1.jpg",
       "/assets/animals/warbler1.jpg",
-      "/assets/animals/warbler2.jpg"
+      "/assets/animals/warbler2.jpg",
+      "/assets/animals/wild1.jpg",
+      "/assets/animals/wild10.jpg",
+      "/assets/animals/wild11.jpg",
+      "/assets/animals/wild13.jpg",
+      "/assets/animals/wild14.jpg",
+      "/assets/animals/wild15.jpg",
+      "/assets/animals/wild2.jpg",
+      "/assets/animals/wild3.jpg",
+      "/assets/animals/wild4.jpg",
+      "/assets/animals/wild5.jpg",
+      "/assets/animals/wild6.jpg",
+      "/assets/animals/wild7.jpg",
+      "/assets/animals/wild8.jpg",
+      "/assets/animals/wild9.jpg"
     ],
     "misc": []
   }

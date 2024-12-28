@@ -46,7 +46,7 @@ export default function RootLayout({
             >
                 <div className="min-h-screen flex flex-col backdrop-blur-xl bg-white/30">
                     <NavBar />
-                    <main className="flex items-center justify-center lg:max-h-[calc(100vh-theme(spacing.52))] overflow-y-auto">{children}</main>
+                    <main className="flex items-center justify-center lg:max-h-[calc(100vh-theme(spacing.52))]">{children}</main>
                     <Footer />
                 </div>
             </body>
