@@ -40,7 +40,7 @@ export const PictureFrame: React.FC<PictureFrameProps> = ({ imageName, variant }
                     )}
                     {imageName && (
                         <img
-                            src={`${basePath}/assets/${imageName}`}
+                            src={`${basePath}${imageName}`}
                             alt={"Picture"}
                             loading="lazy"
                             className={`rounded-xl object-cover object-top w-full h-full ${

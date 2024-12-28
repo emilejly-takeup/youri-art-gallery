@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import manifest from "../../public/assets/manifest.json";
 import homeContent from "../../public/content/home.json";
 
-const AVAILABLE_IMAGES = manifest.images;
+const AVAILABLE_IMAGES = manifest.images.animals;
 
 export default function Home() {
     const [randomImage, setRandomImage] = useState<string | undefined>(undefined);
