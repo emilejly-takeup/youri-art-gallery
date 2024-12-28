@@ -57,12 +57,12 @@ export const PictureFrame: React.FC<PictureFrameProps> = ({ imageName, variant }
         <div className={`picture-frame ${sizeClasses[variant]} rounded-xl relative`}>
             <div className={`${aspectRatioClass}`}>
                 <div className="absolute inset-0">
-                    {isLoading && !isImageCached && <div className="absolute inset-0 bg-gray-100 rounded-xl animate-pulse duration-500" />}
+                    {isLoading && !isImageCached && <div className="absolute inset-0" />}
                     {imageName && (
                         <img
                             src={`${basePath}${imageName}`}
                             alt="Picture"
-                            className={`rounded-xl object-cover object-top w-full h-full transition-opacity duration-300 ${
+                            className={`rounded-xl object-cover object-top w-full h-full transition-opacity duration-1000 ${
                                 isLoading && !isImageCached ? "opacity-0" : "opacity-100"
                             }`}
                             onLoad={handleImageLoad}
