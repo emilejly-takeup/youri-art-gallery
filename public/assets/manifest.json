@@ -1,3 +1,48 @@
 {
-    "images": ["owl_1_sur_9.jpg", "owl_2_sur_9.jpg", "owl_3_sur_9.jpg"]
+  "images": {
+    "nature": [
+      "/assets/nature/wild1.jpg",
+      "/assets/nature/wild10.jpg",
+      "/assets/nature/wild11.jpg",
+      "/assets/nature/wild12.jpg",
+      "/assets/nature/wild13.jpg",
+      "/assets/nature/wild14.jpg",
+      "/assets/nature/wild15.jpg",
+      "/assets/nature/wild2.jpg",
+      "/assets/nature/wild3.jpg",
+      "/assets/nature/wild4.jpg",
+      "/assets/nature/wild5.jpg",
+      "/assets/nature/wild6.jpg",
+      "/assets/nature/wild7.jpg",
+      "/assets/nature/wild8.jpg",
+      "/assets/nature/wild9.jpg"
+    ],
+    "animals": [
+      "/assets/animals/birds1.jpg",
+      "/assets/animals/birds10.jpg",
+      "/assets/animals/birds11.jpg",
+      "/assets/animals/birds12.jpg",
+      "/assets/animals/birds13.jpg",
+      "/assets/animals/birds14.jpg",
+      "/assets/animals/birds15.jpg",
+      "/assets/animals/birds16.jpg",
+      "/assets/animals/birds17.jpg",
+      "/assets/animals/birds2.jpg",
+      "/assets/animals/birds3.jpg",
+      "/assets/animals/birds4.jpg",
+      "/assets/animals/birds5.jpg",
+      "/assets/animals/birds6.jpg",
+      "/assets/animals/birds7.jpg",
+      "/assets/animals/birds8.jpg",
+      "/assets/animals/birds9.jpg",
+      "/assets/animals/deer1.jpg",
+      "/assets/animals/deer2.jpg",
+      "/assets/animals/glennage.jpg",
+      "/assets/animals/owl1.jpg",
+      "/assets/animals/thing1.jpg",
+      "/assets/animals/warbler1.jpg",
+      "/assets/animals/warbler2.jpg"
+    ],
+    "misc": []
+  }
 }

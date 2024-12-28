@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import manifest from "../../public/assets/manifest.json";
 import homeContent from "../../public/content/home.json";
 
-const AVAILABLE_IMAGES = manifest.images;
+const AVAILABLE_IMAGES = manifest.images.animals;
 
 export default function Home() {
-    const [randomImage, setRandomImage] = useState("");
+    const [randomImage, setRandomImage] = useState<string | undefined>(undefined);
 
     useEffect(() => {
         const newRandomImage = AVAILABLE_IMAGES[Math.floor(Math.random() * AVAILABLE_IMAGES.length)];
@@ -23,7 +23,7 @@ export default function Home() {
                 <p>{homeContent["third-paragraph"]}</p>
                 <p>{homeContent["fourth-paragraph"]}</p>
             </div>
-            <PictureFrame imageName={randomImage} variant={PictureFrameSize.MAIN} />
+            <PictureFrame imageName={randomImage ?? undefined} variant={PictureFrameSize.MAIN} />
         </div>
     );
 }
